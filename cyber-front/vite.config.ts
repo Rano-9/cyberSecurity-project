@@ -7,15 +7,16 @@ export default defineConfig({
     outDir: '../cyber-back/cyber_project/static/dist',
     emptyOutDir: true,
     rollupOptions: {
-      input: ['./src/main.js','index.html'],
+      input: ['./src/main.tsx','index.html'],
     },
   },
   plugins: [react()],
-  base: '/static/dist',
+  base: '/',
   server: {
+    allowedHosts: ["frontend"],
     proxy: {
       '/api': {
-        target: 'http://127.0.0.1:8000',
+        target: 'http://backend:8080',
         changeOrigin: true,
       },
     },

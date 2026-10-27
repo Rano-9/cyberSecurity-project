@@ -1,0 +1,35 @@
+services:
+  frontend:
+    image: r4n0/cyber-frontend:latest
+    command: npm run dev -- --host 0.0.0.0 --port 5173
+    volumes:
+      - ./cyber-front/:/usr/src/frontend/
+      - node_modules:/usr/src/frontend/node_modules
+    container_name: frontend
+
+  backend:
+    image: r4n0/cyber-backend:latest
+    command: ["gunicorn", "--bind", "0.0.0.0:8080", "--workers", "1", "cyber.wsgi:application"]
+    container_name: backend
+    volumes:
+      - ./cyber-back/:/app
+
+  watchtower:
+    image: nickfedor/watchtower:latest
+    environment:
+      -  WATCHTOWER_POLL_INTERVAL=600
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - 8000:80
+    volumes:
+      - type: bind
+        source: ./nginx.conf
+        target: /etc/nginx/nginx.conf
+
+
+volumes:
+  node_modules:
