@@ -9,4 +9,4 @@ ENV PYTHONUNBUFFERED=1
 RUN pip install -r requirements.txt
 RUN python3 manage.py collectstatic --noinput
 
-CMD ["pytho3","manage.py","migrate"]
+CMD ["python","manage.py","migrate"]

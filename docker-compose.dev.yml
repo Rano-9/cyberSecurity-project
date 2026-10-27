@@ -13,7 +13,7 @@ services:
     build:
       context:  cyber-back/
       dockerfile: Dockerfile
-    command: ["sh","-c","python3 manage.py migrate && gunicorn --bind 0.0.0.0:8080 --workers 1 cyber.wsgi:application"]
+    command: ["sh","-c","python manage.py migrate && gunicorn --bind 0.0.0.0:8080 --workers 1 cyber.wsgi:application"]
     container_name: backend
     volumes:
       - ./cyber-back/:/app

@@ -1,4 +1,4 @@
-FROM node:26-alpine3.23 AS builder
+FROM node:26-alpine3.24 AS builder
 
 WORKDIR /usr/src/frontend/
 COPY package.json package-lock.json* ./
