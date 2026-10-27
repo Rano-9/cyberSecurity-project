@@ -2,6 +2,8 @@ name: docker-build
 
 on:
     push:
+        branches:
+            - main
     workflow_dispatch:
 
 jobs:
@@ -26,7 +28,7 @@ jobs:
             context: ./cyber-front
             push: true
             tags: ${{ secrets.DOCKER_USERNAME }}/cyber-front:latest
-            
+
         - name: Build and push backend Docker image
           uses: docker/build-push-action@v6
           with:
