@@ -15,24 +15,24 @@ To run project without docker.
 
 cyber-front folder
 
-` npm install `
+`npm install`
 
-` npm run build `
+`npm run build`
 
-` npm run dev -- --mode dev`
+`npm run dev -- --mode dev`
 
 ### Backend
 
 cyber-back folder
 
-` python -m venv .venv`
+`python -m venv .venv`
 
-` source .venv/bin/activate`
+`source .venv/bin/activate`
 
-` pip install -r requirements.txt`
+`pip install -r requirements.txt`
 
-` python manage.py migrate`
+`python manage.py migrate`
 
-` python manage.py runserver 0.0.0.0:8080`
+`python manage.py runserver 0.0.0.0:8080`
 
 Project isn't deployed anywhere. It would be depolyed at ranu.fi, but service provider uses CPanel. Which doesn't use docker, but podman.  
