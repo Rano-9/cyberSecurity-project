@@ -3,7 +3,7 @@ services:
     build:
       context: cyber-front/
       dockerfile: Dockerfile
-    command: npm run dev -- --host 0.0.0.0 --port 5173
+    command: npm run dev -- --host 0.0.0.0 --port 5173 --mode docker
     volumes:
       - ./cyber-front/:/usr/src/frontend/
       - node_modules:/usr/src/frontend/node_modules

@@ -19,5 +19,4 @@ urlpatterns = [
          SettingView.as_view({'get': 'user_settings', 'put': 'user_settings'})),
     path('login/',login_view),
     path('', include(api_route.urls)),
-    
 ]
