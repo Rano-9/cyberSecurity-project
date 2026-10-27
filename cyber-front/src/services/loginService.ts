@@ -1,7 +1,8 @@
 import { request } from "./api"
-import type { User, UserSettings } from "./types"
+import type { User } from "./types"
 
 
-function login(username:string,password:string) {
+function login() {
     return request<User>('/user/')
 }
+export default login

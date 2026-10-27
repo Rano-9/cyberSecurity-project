@@ -1,5 +1,5 @@
 import { useEffect, useState, type SubmitEvent } from "react"
-import type { Note, User } from "../services/types"
+import type { Note } from "../services/types"
 import { createNote, getNotes } from "../services/notesService"
 import NoteForm from './NoteForm'
 
@@ -12,14 +12,7 @@ export interface NoteFormElements extends HTMLFormElement {
     readonly elements: FormElements
 }
 
-interface NotesProps{
-    user : User | null
-}
-
-const Notes = ({
-    user,
-
-}: NotesProps)  => {
+const Notes = ()  => {
     const [notes, setNotes] = useState<Note[]>([])
     const [isLoading, setIsLoading] = useState(true)
     const [error, setError] = useState<string | null>(null)

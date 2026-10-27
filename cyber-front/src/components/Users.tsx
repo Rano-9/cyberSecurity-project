@@ -1,15 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { getUsers } from '../services/userService'
 import type { User } from '../services/types'
 
-interface userProps {
-  userState : [User | null, React.Dispatch<React.SetStateAction<null>>] 
-} 
-
-
-const Users = ({
-  userState,
-}:userProps) => {
+const Users = () => {
   const [users, setUsers] = useState<User[]>([])
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)

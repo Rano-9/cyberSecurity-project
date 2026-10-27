@@ -4,13 +4,14 @@ import { defineConfig } from 'vite'
 // https://vite.dev/config/
 export default defineConfig({
   build: {
-    outDir: '../django_projektisi/static/dist',
+    outDir: '../cyber-back/cyber_project/static/dist',
     emptyOutDir: true,
     rollupOptions: {
-      input: './src/main.js',
+      input: ['./src/main.js','index.html'],
     },
   },
   plugins: [react()],
+  base: '/static/dist',
   server: {
     proxy: {
       '/api': {
@@ -18,7 +19,6 @@ export default defineConfig({
         changeOrigin: true,
       },
     },
-  
   },
 })
 

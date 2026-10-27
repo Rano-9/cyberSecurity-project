@@ -3,11 +3,9 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import Home from './components/Home'
 import Users from './components/Users'
 import Notes from './components/Notes'
-import { useState } from 'react'
 
 function App() {
 
-  const [user, setUser] = useState(null)
   
   return (
     <Router>
@@ -20,8 +18,8 @@ function App() {
       <main>
         <Routes>
           <Route path='/'  element={<Home />}/>
-          <Route path='/users' element={<Users userState={[user, setUser]} />}/>
-          <Route path='/notes' element={<Notes user = {user} />}/>
+          <Route path='/users' element={<Users  />}/>
+          <Route path='/notes' element={<Notes  />}/>
         </Routes>
       </main>
       <footer></footer>
