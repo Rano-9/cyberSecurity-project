@@ -35,4 +35,6 @@ cyber-back folder
 
 `python manage.py runserver 0.0.0.0:8080`
 
+### For docker DevOps course
+
 Project isn't deployed anywhere. It would be depolyed at ranu.fi, but service provider uses CPanel. Which doesn't use docker, but podman.  
